@@ -1,0 +1,24 @@
+{
+  "name": "nav-link-with-prop",
+  "version": "0.0.1",
+  "description": "React Router NavLink that uses an active prop rather than css class.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/penx/nav-link-with-prop.git"
+  },
+  "keywords": [
+    "react-router",
+    "react",
+    "navlink"
+  ],
+  "author": "Alasdair McLeay",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/penx/nav-link-with-prop/issues"
+  },
+  "homepage": "https://github.com/penx/nav-link-with-prop#readme"
+}
