@@ -1,8 +1,7 @@
 import React from "react";
-import { Route } from "react-router";
+import { Link, Route } from "react-router-dom";
 import PropTypes from "prop-types";
 
-import Link from "./Link";
 
 function joinClassnames(...classnames) {
   return classnames.filter(i => i).join(" ");

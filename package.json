@@ -51,5 +51,10 @@
     "babel-plugin-react-remove-prop-types": "^3.0.0",
     "cross-env": "^5.2.0",
     "rimraf": "^2.6.2"
+  },
+  "peerDependencies": {
+    "prop-types": "15+",
+    "react": "15+",
+    "react-router-dom": "4+"
   }
 }
