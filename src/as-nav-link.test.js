@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MemoryRouter as Router, Link } from 'react-router-dom';
+import { MemoryRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
-import NavLinkWithProp from '.';
+import asNavLink from './as-nav-link';
 import 'jest-styled-components';
 
-describe('NavLinkWithProp', () => {
+describe('asNavLink', () => {
   it('renders a styled-component without an active prop', () => {
     const MyAnchor = styled(({
       as: T = 'a',
@@ -16,11 +16,7 @@ describe('NavLinkWithProp', () => {
     }, ({ isActive }) => (isActive && {
       color: 'red',
     }));
-    const MyLink = ({ children, ...props }) => (
-      <NavLinkWithProp {...props}>
-        {innerProps => <MyAnchor as={Link} {...innerProps}>{children}</MyAnchor>}
-      </NavLinkWithProp>
-    );
+    const MyLink = asNavLink()(MyAnchor);
 
     const MyTest = () => <Router><MyLink to="/somewhere">My Link</MyLink></Router>;
     const tree = renderer.create(<MyTest />).toJSON();
@@ -40,11 +36,7 @@ describe('NavLinkWithProp', () => {
     }, ({ isActive }) => (isActive && {
       color: 'red',
     }));
-    const MyLink = ({ children, ...props }) => (
-      <NavLinkWithProp {...props}>
-        {innerProps => <MyAnchor as={Link} {...innerProps}>{children}</MyAnchor>}
-      </NavLinkWithProp>
-    );
+    const MyLink = asNavLink()(MyAnchor);
 
     const MyTest = () => <Router><MyLink to="/">My Link</MyLink></Router>;
     const tree = renderer.create(<MyTest />).toJSON();

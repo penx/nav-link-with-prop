@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 /**
  * A Render Props wrapper that knows if it's "active" or not.
  */
-function NavLink({
+function NavLinkWithProp({
   exact,
-  isActive: isActiveProp,
+  isActive: isActiveProp, // this is a function that can override the match check
   location,
   strict,
   to,
@@ -43,7 +43,7 @@ function NavLink({
   );
 }
 
-NavLink.propTypes = {
+NavLinkWithProp.propTypes = {
   exact: Route.propTypes.exact,
   isActive: PropTypes.func,
   // eslint-disable-next-line react/forbid-prop-types
@@ -53,7 +53,7 @@ NavLink.propTypes = {
   children: PropTypes.func,
 };
 
-NavLink.defaultProps = {
+NavLinkWithProp.defaultProps = {
   exact: undefined,
   isActive: undefined,
   location: undefined,
@@ -62,4 +62,5 @@ NavLink.defaultProps = {
   children: undefined,
 };
 
-export default NavLink;
+export default NavLinkWithProp;
+export asNavLink from './as-nav-link';
