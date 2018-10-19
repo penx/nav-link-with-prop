@@ -1,6 +1,6 @@
-import React from "react";
-import { Link, Route } from "react-router-dom";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Link, Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 /**
  * A Render Props wrapper that knows if it's "active" or not.
@@ -14,10 +14,10 @@ function NavLink({
   children,
   ...rest
 }) {
-  const path = typeof to === "object" ? to.pathname : to;
+  const path = typeof to === 'object' ? to.pathname : to;
 
   // Regex taken from: https://github.com/pillarjs/path-to-regexp/blob/master/index.js#L202
-  const escapedPath = path && path.replace(/([.+*?=^!:${}()[\]|/\\])/g, "\\$1");
+  const escapedPath = path && path.replace(/([.+*?=^!:${}()[\]|/\\])/g, '\\$1');
 
   return (
     <Route
@@ -34,7 +34,7 @@ function NavLink({
           children({
             isActive,
             to,
-            ...rest
+            ...rest,
           })
         );
       }}
