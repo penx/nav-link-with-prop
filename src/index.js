@@ -11,6 +11,7 @@ function NavLink({
   location,
   strict,
   to,
+  children,
   ...rest
 }) {
   const path = typeof to === "object" ? to.pathname : to;
@@ -30,7 +31,7 @@ function NavLink({
           : match);
 
         return (
-          this.children({
+          children({
             isActive,
             to,
             ...rest

@@ -1,6 +1,7 @@
+import React from 'react';
 import NavLinkWithProp from '.';
 import styled from 'styled-components';
-import { Router, Link } from 'react-router-dom';
+import { MemoryRouter as Router, Link } from 'react-router-dom';
 import renderer from 'react-test-renderer'
 import 'jest-styled-components'
 
@@ -12,13 +13,12 @@ describe('NavLinkWithProp', () => {
     }) => <T {...props}/>)({
       textDecoration: 'blink',
       color: 'blue',
-      ({isActive} => ({
-        color: 'red'
-      }))
-    });
+    }, ({isActive}) => ({
+      color: 'red'
+    }));
 
     const MyLink = (props) => <NavLinkWithProp {...props}>
-      (props) => <MyAnchor as={Link} {...props} />
+      {(props) => <MyAnchor as={Link} {...props} />}
     </NavLinkWithProp>
 
     const MyTest = () => <Router><MyLink to="/somewhere" /></Router>

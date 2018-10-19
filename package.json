@@ -6,6 +6,9 @@
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
   "scripts": {
+    "test": "jest && eslint",
+    "eslint": "eslint",
+    "jest": "jest",
     "build": "npm run build:lib && npm run build:es",
     "build:lib": "rimraf lib && babel src -d lib --source-maps",
     "build:es": "rimraf es && cross-env BABEL_ENV=es babel src -d es --source-maps"
@@ -27,7 +30,7 @@
   "homepage": "https://github.com/penx/nav-link-with-prop#readme",
   "devDependencies": {
     "@babel/cli": "^7.1.2",
-    "@babel/core": "^7.0.0",
+    "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.0.0",
     "@babel/plugin-proposal-do-expressions": "^7.0.0",
@@ -47,10 +50,25 @@
     "@babel/plugin-transform-runtime": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-add-module-exports": "^1.0.0",
     "babel-plugin-react-remove-prop-types": "^3.0.0",
     "cross-env": "^5.2.0",
-    "rimraf": "^2.6.2"
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "jest": "^23.6.0",
+    "jest-styled-components": "^6.2.1",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-router-dom": "^4.3.1",
+    "react-test-renderer": "^16.5.2",
+    "regenerator-runtime": "^0.12.1",
+    "rimraf": "^2.6.2",
+    "styled-components": "^4.0.2"
   },
   "peerDependencies": {
     "prop-types": "15+",
