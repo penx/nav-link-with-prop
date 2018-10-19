@@ -2,12 +2,14 @@ import React from 'react';
 import { Link, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+// TODO: prop for active
 /**
  * A Render Props wrapper that knows if it's "active" or not.
  */
 function NavLinkWithProp({
   exact,
   isActive: isActiveProp, // this is a function that can override the match check
+  activeProp,
   location,
   strict,
   to,
@@ -33,7 +35,7 @@ function NavLinkWithProp({
 
         return (
           children({
-            isActive,
+            [activeProp]: isActive,
             to,
             ...rest,
           })
@@ -46,6 +48,7 @@ function NavLinkWithProp({
 NavLinkWithProp.propTypes = {
   exact: Route.propTypes.exact,
   isActive: PropTypes.func,
+  activeProp: PropTypes.string,
   // eslint-disable-next-line react/forbid-prop-types
   location: PropTypes.object,
   strict: Route.propTypes.strict,
@@ -56,6 +59,7 @@ NavLinkWithProp.propTypes = {
 NavLinkWithProp.defaultProps = {
   exact: undefined,
   isActive: undefined,
+  activeProp: 'active',
   location: undefined,
   strict: undefined,
   to: undefined,

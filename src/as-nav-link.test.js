@@ -13,7 +13,7 @@ describe('asNavLink', () => {
     }) => <T {...props} />)({
       textDecoration: 'blink',
       color: 'blue',
-    }, ({ isActive }) => (isActive && {
+    }, ({ active }) => (active && {
       color: 'red',
     }));
     const MyLink = asNavLink()(MyAnchor);
@@ -22,7 +22,7 @@ describe('asNavLink', () => {
     const tree = renderer.create(<MyTest />).toJSON();
     expect(tree).toHaveStyleRule('color', 'blue');
     expect(tree.props.href === '/somewhere');
-    expect(tree.props.isActive === false);
+    expect(tree.props.active === false);
     expect(tree.props.children === 'My Link');
   });
 
@@ -33,7 +33,7 @@ describe('asNavLink', () => {
     }) => <T {...props} />)({
       textDecoration: 'blink',
       color: 'blue',
-    }, ({ isActive }) => (isActive && {
+    }, ({ active }) => (active && {
       color: 'red',
     }));
     const MyLink = asNavLink()(MyAnchor);
@@ -42,7 +42,7 @@ describe('asNavLink', () => {
     const tree = renderer.create(<MyTest />).toJSON();
     expect(tree).toHaveStyleRule('color', 'red');
     expect(tree.props.href === '/');
-    expect(tree.props.isActive === true);
+    expect(tree.props.active === true);
     expect(tree.props.children === 'My Link');
   });
 });
@@ -51,3 +51,4 @@ describe('asNavLink', () => {
 // - test for exact prop
 // - test for both emotion and styled-components
 // - asNavLink hof hoc, here to begin with then separate repo
+// - test for custom activeProp
