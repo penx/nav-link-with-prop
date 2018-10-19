@@ -25,9 +25,10 @@ function NavLink({
       exact={exact}
       strict={strict}
       location={location}
-      children={({ location, match }) => {
+    >
+      {({ location: loc, match }) => {
         const isActive = !!(isActiveProp
-          ? isActiveProp(match, location)
+          ? isActiveProp(match, loc)
           : match);
 
         return (
@@ -38,8 +39,27 @@ function NavLink({
           })
         );
       }}
-    />
+    </Route>
   );
 }
+
+NavLink.propTypes = {
+  exact: Route.propTypes.exact,
+  isActive: PropTypes.func,
+  // eslint-disable-next-line react/forbid-prop-types
+  location: PropTypes.object,
+  strict: Route.propTypes.strict,
+  to: Link.propTypes.to,
+  children: PropTypes.func,
+};
+
+NavLink.defaultProps = {
+  exact: undefined,
+  isActive: undefined,
+  location: undefined,
+  strict: undefined,
+  to: undefined,
+  children: undefined,
+};
 
 export default NavLink;

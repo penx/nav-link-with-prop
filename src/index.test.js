@@ -18,7 +18,7 @@ describe('NavLinkWithProp', () => {
     }));
     const MyLink = props => (
       <NavLinkWithProp {...props}>
-        {props => <MyAnchor as={Link} {...props} />}
+        {innerProps => <MyAnchor as={Link} {...innerProps} />}
       </NavLinkWithProp>
     );
 
@@ -41,7 +41,7 @@ describe('NavLinkWithProp', () => {
     }));
     const MyLink = props => (
       <NavLinkWithProp {...props}>
-        {props => <MyAnchor as={Link} {...props} />}
+        {innerProps => <MyAnchor as={Link} {...innerProps} />}
       </NavLinkWithProp>
     );
 

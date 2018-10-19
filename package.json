@@ -6,7 +6,7 @@
   "module": "es/index.js",
   "jsnext:main": "es/index.js",
   "scripts": {
-    "test": "jest && eslint",
+    "test": "jest && eslint ./src",
     "eslint": "eslint ./src",
     "jest": "jest",
     "build": "npm run build:lib && npm run build:es",
