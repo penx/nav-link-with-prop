@@ -7,7 +7,7 @@
   "jsnext:main": "es/index.js",
   "scripts": {
     "test": "jest && eslint",
-    "eslint": "eslint",
+    "eslint": "eslint ./src",
     "jest": "jest",
     "build": "npm run build:lib && npm run build:es",
     "build:lib": "rimraf lib && babel src -d lib --source-maps",
@@ -51,6 +51,7 @@
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
     "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
     "babel-plugin-add-module-exports": "^1.0.0",
     "babel-plugin-react-remove-prop-types": "^3.0.0",
     "cross-env": "^5.2.0",

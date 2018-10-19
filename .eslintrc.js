@@ -25,7 +25,6 @@ module.exports = {
       "files": [ "test.js", "**.test.js" ],
       "env": {
         "jest": true,
-        "enzyme": true,
         "browser": true
       }
     }
