@@ -31,13 +31,8 @@ Note that you need to provide the 'as' prop. This is provided by styled-componen
 You can then use one of the following approaches:
 
 ### Higher order component
-```jsx
-import { asNavLink } from 'nav-link-with-prop';
 
-const MyNavLink = asNavLink(config)(MyNavAnchor);
-```
-
-`config` is optional and can include an `isActive` function (as per ReactRouter's NavLink) and an `activeProp` string (the prop name that is passed to your dumb component).
+See [as-nav-link](https://github.com/penx/as-nav-link).
 
 ### Render Props
 A bit uglier:

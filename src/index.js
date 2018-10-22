@@ -67,4 +67,3 @@ NavLinkWithProp.defaultProps = {
 };
 
 export default NavLinkWithProp;
-export asNavLink from './as-nav-link';
