@@ -72,8 +72,8 @@
     "styled-components": "^4.0.2"
   },
   "peerDependencies": {
-    "prop-types": "15+",
-    "react": "15+",
-    "react-router-dom": "4+"
+    "prop-types": ">=15",
+    "react": ">=15",
+    "react-router-dom": ">=4"
   }
 }
