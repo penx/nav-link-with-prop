@@ -1,6 +1,6 @@
 {
   "name": "nav-link-with-prop",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React Router NavLink that uses an active prop rather than css class.",
   "main": "lib/index.js",
   "module": "es/index.js",
